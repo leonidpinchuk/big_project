@@ -6,6 +6,7 @@
 
 {% block content %}
     <h2>Leave a comment</h2>
+    <span>Posted comment cannot be deleted</span>
     <form method="post">
         {% csrf_token %}
         {{ form.title }}<br>
@@ -14,7 +15,7 @@
         <span>{{ error }}</span>
     </form>
 
-    <h3>All comments:</h3>
+    <h4>All comments:</h4>
 
     <div>
         {% if tasks %}
