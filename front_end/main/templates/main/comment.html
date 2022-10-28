@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h2>Leave a comment</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.task }}<br>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <span>{{ error }}</span>
+    </form>
+
+    <h3>All comments:</h3>
+
+    <div>
+        {% if tasks %}
+            {% for el in tasks %}
+                <div class="alert alert-warning mt-2">
+                    <h3>{{ el.title }}</h3>
+                    <p>{{ el.task }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>None</p>
+        {% endif %}
+    </div>
+{% endblock %}

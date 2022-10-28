@@ -10,21 +10,23 @@ def index(request):
 def about(request):
     return render(request, 'main/about.html')
 
-def create(request):
+def comment(request):
     error = ''
     if request.method == 'POST':
         form = TaskForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('comment')
         else:
             error = 'Is not valid'
-
+    tasks = Task.objects.order_by('-id')
 
     form = TaskForm()
     context = {
         'form': form,
-        'error': error
+        'error': error,
+        'title': 'Comment',
+        'tasks': tasks
     }
-    return render(request, 'main/create.html', context)
+    return render(request, 'main/comment.html', context)
 
