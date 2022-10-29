@@ -13,6 +13,9 @@ def about(request):
 def dashboard(request):
     return render(request, 'main/dashboard.html')
 
+def marketplace(request):
+    return render(request, 'main/marketplace.html')
+
 def comment(request):
     error = ''
     if request.method == 'POST':
