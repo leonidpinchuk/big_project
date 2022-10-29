@@ -6,27 +6,26 @@
 
 {% block content %}
   <h2> Marketplace </h2>
-
+<div>
   <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-left bg-light">
-    <h4>Big burger</h4>
     <a draggable="false" class="product-card__main j-card-link" href="{% url 'marketplace' %}">
-      <div class="product-card__img">
-        <div class="product-card__img-wrap img-plug j-thumbnail-wrap">
+      <div>
+        <div class="product-card__img-wrap img-plug ">
           <img width="250" height="300" class="j-thumbnail thumbnail"
                data-link="src{:~ImageUrl(nmId, 'c516x688', 1)}"
                src="https://images.wbstatic.net/c516x688/new/17530000/17537765-1.jpg">
         </div>
       </div>
       <div>
-          <strong>Товарe</strong>
-          <span>Товар</span>
+        <h4>Big burger</h4>
+        <strong>Товарe</strong>
+        <span>Товар</span>
       </div>
       <span class="product-card__rating stars-line star5"></span>
-      <span class="product-card__count">360</span>
-      <p class="product-card__delivery">Доставка</p>
+      <a class="btn btn-outline-secondary" href="">Description</a>
       <a class="btn btn-outline-secondary" href="">Buy</a>
     </a>
-
   </div>
+</div>
 
 {% endblock %}
